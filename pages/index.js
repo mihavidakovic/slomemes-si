@@ -28,6 +28,7 @@ export async function getStaticProps(context) {
     // request photos for a specific instagram user
     const instagram = await client.getPhotosByUsername({
       username: process.env.IG_USERNAME,
+      first: 24
     })
     if (instagram["user"]["edge_owner_to_timeline_media"]["count"] > 0) {
       // if we receive timeline data back
